@@ -209,129 +209,126 @@ async def photo(message):
 # Биология
 @dp.callback_query_handler(lambda call: True, state=None)
 async def biology(call: CallbackQuery):
-    if call.data == 'biology' or 'geography' or 'math' or 'physics' or 'english' or 'ukraine_language':
+    if call.data == 'biology' :
         await bot.send_message(call.message.chat.id, "Выберите страницу")
-    await Test.next()
+    await Test.set()
 
 
 @dp.message_handler(content_types=['text'], state=Test.Q1)
 async def grt(message: types.Message, state: FSMContext):
     answer = message.text
     await state.update_data(answer1=answer)
-    try:
-        if message.text == '1':
-            sql.execute("SELECT id FROM name WHERE messag_text = (?)", ('1',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '2':
-            sql.execute("SELECT id FROM name WHERE messag_text = (?)", ('2',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '3':
-            sql.execute("SELECT id FROM name WHERE messag_text = (?)", ('3',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '4':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('4',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '5':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('5',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '6':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('6',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '7':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('7',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '8':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('8',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '9':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('9',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '10':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('10',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '11':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('11',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '12':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('12',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '13':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('13',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '14':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('14',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '15':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('15',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '16':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('16',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '17':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('17',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '18':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('18',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '19':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('19',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '20':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('20',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '21':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('21',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        elif message.text == '22':
-            sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('22',))
-            rows = sql.fetchone()
-            await bot.send_photo(message.chat.id, photo=rows[0])
-            await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-    except Exception:
+    if message.text == '1':
+        sql.execute("SELECT id FROM name WHERE messag_text = (?)", ('1',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
         await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
-        await Test.Q2.set()
+    elif message.text == '2':
+        sql.execute("SELECT id FROM name WHERE messag_text = (?)", ('2',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '3':
+        sql.execute("SELECT id FROM name WHERE messag_text = (?)", ('3',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '4':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('4',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '5':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('5',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '6':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('6',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '7':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('7',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '8':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('8',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '9':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('9',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '10':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('10',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '11':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('11',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '12':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('12',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '13':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('13',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '14':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('14',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '15':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('15',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '16':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('16',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '17':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('17',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '18':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('18',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '19':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('19',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '20':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('20',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '21':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('21',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    elif message.text == '22':
+        sql.execute(f"SELECT id FROM name WHERE messag_text = (?)", ('22',))
+        rows = sql.fetchone()
+        await bot.send_photo(message.chat.id, photo=rows[0])
+        await bot.send_message(message.chat.id, "Если вы хотите выйти пропишите /q")
+    await Test.next()
 
 
 @dp.message_handler(state=Test.Q2)
